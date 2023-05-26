@@ -26,15 +26,7 @@ function App () {
   Or... wait for it... **_both!_**
   And feel free to go crazy ~~crossing stuff out~~.
   
-  There's also [links](https://www.freecodecamp.org), and
-  > Block Quotes!
-  
-  And if you want to get really crazy, even tables:
-  
-  Wild Header | Crazy Header | Another Header?
-  ------------ | ------------- | -------------
-  Your content can | be here, and it | can be here....
-  And here. | Okay. | I think we get it.
+  There's also [links](https://www.freecodecamp.org)
   
   - And of course there are lists.
     - Some are bulleted.
@@ -49,20 +41,27 @@ function App () {
   ![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)`
 
   const [text, setText] = useState(DEFAULT)
+  marked.use({
+    gfm: true,
+    breaks: true,
+    mangle: false,
+    headerIds: false
+  })
 
   return (
     <>
-      <div className='container d-flex flex-column justify-content-center mt-3'>
+      <div className='container d-flex flex-column justify-content-center my-3'>
         <h1 className='text-center'>Markdown Previewer</h1>
+        <hr />
         <h3>How to use:</h3>
         <ol>
           <li>Type in stuff on the editor</li>
           <li>See the live updates on the preview</li>
         </ol>
-        <div className='accordion w-100 mb-3' id='accordion'>
-          <div className='accordion-item'>
+        <div className='accordion w-100 mb-3 shadow' id='accordion'>
+          <div className='accordion-item section'>
             <h2 className='accordion-header'>
-              <button className='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+              <button className='accordion-button fs-2 fw-semibold' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
                 Editor
               </button>
             </h2>
@@ -80,10 +79,10 @@ function App () {
             </div>
           </div>
         </div>
-        <div className='w-100'>
-          <h2>Preview</h2>
+        <div className='w-100 border rounded shadow bg-light section'>
+          <h2 className='bg-primary-subtle rounded-top px-4 py-3'>Preview</h2>
           <div
-            className='w-100'
+            className='w-100 p-4'
             id='preview'
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(text)) }}
           />
