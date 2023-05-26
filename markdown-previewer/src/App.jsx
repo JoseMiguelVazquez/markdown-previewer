@@ -26,7 +26,15 @@ function App () {
   Or... wait for it... **_both!_**
   And feel free to go crazy ~~crossing stuff out~~.
   
-  There's also [links](https://www.freecodecamp.org)
+  There's also [links](https://www.freecodecamp.org), and
+  > Block Quotes!
+
+  And if you want to get really crazy, even tables:
+
+  Wild Header | Crazy Header | Another Header?
+  ------------ | ------------- | -------------
+  Your content can | be here, and it | can be here....
+  And here. | Okay. | I think we get it.
   
   - And of course there are lists.
     - Some are bulleted.
@@ -55,7 +63,7 @@ function App () {
         <hr />
         <h3>How to use:</h3>
         <ol>
-          <li>Type in stuff on the editor</li>
+          <li>Type in GitHub flavored markdown on the editor</li>
           <li>See the live updates on the preview</li>
         </ol>
         <div className='accordion w-100 mb-3 shadow' id='accordion'>
